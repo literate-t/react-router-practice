@@ -1,6 +1,6 @@
 import React from "react";
 import Profile from "./Profile";
-import { Link, Outlet, Route, Routes } from "react-router-dom";
+import { NavLink, Outlet, Route, Routes } from "react-router-dom";
 import NoChoice from "./NoChoice";
 
 function Profiles() {
@@ -9,10 +9,24 @@ function Profiles() {
       <h3>사용자 목록</h3>
       <ul>
         <li>
-          <Link to="/profiles/t">t</Link>
+          <NavLink
+            to="/profiles/t"
+            style={({ isActive }) =>
+              isActive ? { color: "white", background: "black" } : null
+            }
+          >
+            t
+          </NavLink>
         </li>
         <li>
-          <Link to="/profiles/homer">homer</Link>
+          <NavLink
+            to="/profiles/homer"
+            style={({ isActive }) =>
+              isActive ? { color: "red", background: "blue" } : null
+            }
+          >
+            homer
+          </NavLink>
         </li>
       </ul>
       <Outlet />
